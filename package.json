@@ -1,0 +1,17 @@
+{
+  "name": "react-namaste-dev",
+  "version": "1.0.0",
+  "description": "this is namste react app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "nikhil",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
