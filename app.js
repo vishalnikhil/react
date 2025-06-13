@@ -47,15 +47,15 @@ const Header= ()=>{
        background:"#fff7e3"
   }
 
- const RestCard=()=>{
+ const RestCard=({resname,cuisine})=>{
        return(
             <div className="rescard" style={Stylecard}>
 
            
                   <img className="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC_HBGeynBdWgXk3jz4jvZykhECPo0BVI1_Q&s"></img>
 
-                 <h3 className="resname">KFC</h3>
-                 <h4>Chicken,Non veg,fries</h4>
+                 <h3 className="resname">{resname}</h3>
+                 <h4>{cuisine}</h4>
                  <h4>4 stars</h4>
                  <h4>29 minutes</h4>
 
@@ -79,14 +79,13 @@ const Header= ()=>{
                 <div className="rest-container">
 
 
-                    <RestCard/>
-                     <RestCard/>
-                      <RestCard/>
-                       <RestCard/>
-                       <RestCard/>
-                       <RestCard/>
-                       <RestCard/>
-                       
+                    <RestCard  resname="KFC"  cuisine="chicken , leg"/> 
+                 <RestCard resname="Meghna foods" cuisine="north indian"/>  
+                 {/* props of the object props */}
+
+                     
+                    
+                        
 
 
 
