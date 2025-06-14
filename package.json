@@ -2,10 +2,11 @@
   "name": "react-namaste-dev",
   "version": "1.0.0",
   "description": "this is namste react app",
-  "scripts": {
-    "test": "jest",
-    "start":"parcel index.html"
-  },
+ "scripts": {
+  "start": "parcel index.html",
+  "build": "parcel build index.html"
+},
+
   "keywords": [
     "react"
   ],
