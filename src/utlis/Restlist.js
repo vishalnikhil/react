@@ -26,31 +26,31 @@ const Restlist = [
   {
     resname: "Pizza Hut",
     cuisine: "pizza, fast food",
-    img: "https://b.zmtcdn.com/data/pictures/chains/1/931/24697b617bb8aaf5b1c7df9a7074a662.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU-WNpSZoQ_OTseqpBuk83Y5tAl6C1QhVhMQ&s",
     stars: 4.0,
   },
   {
     resname: "Burger King",
     cuisine: "burgers, fries",
-    img: "https://b.zmtcdn.com/data/pictures/chains/1/931/24697b617bb8aaf5b1c7df9a7074a662.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Burger_King_2020.svg/800px-Burger_King_2020.svg.png",
     stars: 3.8,
   },
   {
     resname: "Domino's Pizza",
     cuisine: "pizza, sides",
-    img: "https://b.zmtcdn.com/data/pictures/chains/1/931/24697b617bb8aaf5b1c7df9a7074a662.jpg",
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/RX_THUMBNAIL/IMAGES/VENDOR/2025/3/13/28d402c3-a90d-432d-8d53-e55ed89e2422_74542.JPG",
     stars: 4.2,
   },
   {
     resname: "Biryani Blues",
     cuisine: "hyderabadi biryani",
-    img: "https://b.zmtcdn.com/data/pictures/6/300006/282bc6aef7e5be810e6dbd429c6df7c7.jpg",
+    img: "https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg",
     stars: 4.4,
   },
   {
     resname: "Subway",
     cuisine: "healthy, sandwiches",
-    img: "https://b.zmtcdn.com/data/pictures/chains/9/9319/3c4744e68c6e5a0b2a0db3e319763b30.jpg",
+    img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/5a/ab/9c/subway-eat-fresh.jpg?w=900&h=500&s=1",
     stars: 3.7,
   },
 ];

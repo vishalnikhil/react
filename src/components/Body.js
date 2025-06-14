@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Restlist from "../utlis/Restlist";
+import Shimmer from "./Shimmer";
 
 const Stylecard = {
   background: "#fff7e3",
@@ -20,28 +21,52 @@ const RestCard = ({ resname, cuisine, img, stars }) => {
 
 };
 
-
 const Body = () => {
-
-//1st is usued to use the variable and set is used to update the variable or object
-
-
-
-  const [restaurants, setRestaurants] = useState(Restlist);
-
-
  
+//1st is usued to use the variable and set is used to update the variable or object
+ const [restaurants, setRestaurants] = useState(Restlist);
+//    useEffect(()=>{
+//            fetchData();
+//         },[]); //takes two arguments // call back function and an array this will be called after your component renders
+
+        //  console.log("body rendered")
+
+        // const fetchData= async ()=>{
+
+        //      const data= await fetch(
+        //          "#api"
+        //      )
+
+
+
+        //    const json = await data.json();
+
+        // //    setRestaurants(json)
+
+        // };
+
+       
+        
+        //first the body is rendered and then the useEffect is called
+
+
   const handleFilter = ()=>{
 
        setRestaurants(restaurants.filter(k=>k.stars>=4.0));
 
   };
 
-  
 
   return (
     <div className="body">
+
+         
       <div className="filter">
+
+        <input placeholder="find restraunt"></input>
+        <button onClick={()=>{}} >search</button>
+
+         
         <button className="filter-btn" onClick={handleFilter}>
           TOP RATED RESTRAUNT NEAR YOU
         </button>

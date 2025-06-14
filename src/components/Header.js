@@ -1,5 +1,17 @@
 
+import { useState } from "react";
+
+  // console.log("something else was also called");
+
 const Header= ()=>{
+
+    // console.log("header called")
+
+   const [btnName, setBtnName] = useState("LOGIN");
+
+  let change= () => {
+    setBtnName(btnName === "LOGIN" ? "LOGOUT" : "LOGIN");
+  };
 
      return(
            
@@ -26,6 +38,7 @@ const Header= ()=>{
                     <li className="navlist">About us</li>
                     <li className="navlist">Contact us</li>
                     <li className="navlist">Cart</li>
+                    <button className="login" onClick={change} >{btnName}</button>
                     
                 </ul>
 
