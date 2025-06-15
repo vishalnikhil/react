@@ -22,6 +22,8 @@ const RestCard = ({ resname, cuisine, img, stars }) => {
 };
 
 const Body = () => {
+
+    // console.log("body got rendered due to input");   
  
 //1st is usued to use the variable and set is used to update the variable or object
  const [restaurants, setRestaurants] = useState(Restlist);
@@ -37,7 +39,15 @@ const Body = () => {
         //          "#api"
         //      )
 
+if(restaurants.length===0){
+      console.log("no restraunts found")
 
+      alert("no restraunts found")
+
+    //in this case you can show some messages on the screen
+
+      //
+};
 
         //    const json = await data.json();
 
@@ -57,18 +67,46 @@ const Body = () => {
   };
 
 
+  
+  const [searchtext,setsearchtext]=useState("");
+
+   
+
+
   return (
     <div className="body">
 
          
       <div className="filter">
 
-        <input placeholder="find restraunt"></input>
-        <button onClick={()=>{}} >search</button>
+        <input placeholder="find restraunt"  value={searchtext} onChange={(e)=>{
+               setsearchtext(e.target.value);
+        }}/>
+        <button className="filter-btn" onClick={()=>{
+      
+          //filter the rest cards and update ui
+
+          console.log(searchtext)
+          //aab yeh list of rest ko update krna parega
+
+
+          const filtered_val=Restlist.filter((res)=>res.resname.toLowerCase().includes(searchtext.toLowerCase()));
+
+          setRestaurants(filtered_val);
+
+
+
+
+          //hence aab mere ps jo search text aaya h wo search text variable m store ho ja rha hai
+
+          //now changes lane ke liye fn likhne parega
+          
+
+        }}>search</button>
 
          
         <button className="filter-btn" onClick={handleFilter}>
-          TOP RATED RESTRAUNT NEAR YOU
+               TOP RATED RESTRAUNT NEAR YOU
         </button>
       </div>
 

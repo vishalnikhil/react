@@ -7,6 +7,9 @@ const Header= ()=>{
 
     // console.log("header called")
 
+    //this is a power varibale that gives us the variable as well as a function than can change it and when it is changed the component
+    //rerenders with the new value of updated value  hence the header component will be re rendered 
+
    const [btnName, setBtnName] = useState("LOGIN");
 
   let change= () => {

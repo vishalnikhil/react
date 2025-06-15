@@ -55,6 +55,10 @@ since the login btn is a const how does it gets updated as logout ..this breaks 
 
 only then button compenend gets re render not the whole page,thats cool and now this is the beauty of useState
 
-and dont forget Parcel is a beast :) <3000 (tree shaking)
+
+  reconsilation algorithms(effective dom manipulations)
+    and dont forget Parcel is a beast :) <3000 (tree shaking)
+
+
 
 
