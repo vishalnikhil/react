@@ -67,6 +67,18 @@ only then button compenend gets re render not the whole page,thats cool and now 
 
     we will use react router dom library for routes
 
+    outlet given to us by raect-router dom
+
+    children concept when we want the navbar component to be always present and the body changes we use outlet
+
+    oulet gets replaced by the component we want to render when the specific children routes is triggered
+
+    never use a anchor tag while redirecting to some other page beacuse it refreshes the whole page  always use Link given to us by react
+
+     link tag is same as the anchor tag synatx wise and we us to="..."  ...have the route where we want to go and it doest not re renders the page
+       only the components refreses that why "WE CALL REACT SINGLE PAGE APPLICATION"
+
+
 
 
 

@@ -8,7 +8,7 @@ import Error from "./src/components/Error";
 
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider,Outlet,
 } from "react-router-dom";
 import Contact from "./src/components/Contact";
 
@@ -16,28 +16,49 @@ const Applayout = () => {
   return (
     <div>
       <Header />
-      <Body />
+      {/* <Body /> */}
+      <Outlet/>
     </div>
   );
 };
 
 const appRouter = createBrowserRouter([
   {
-    path: "/",
-    element: <Applayout />,
-    errorElement:<Error></Error>
-    
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
 
+    path: "/",
+    element: <Applayout/>,
+    children:[
+  
+
+       {
+           path:"/",
+           element:<Body/>
+       },
+
+       
+     {
+  path: "/about",
+  element: (
+    <>
+     
+      <About />
+    </>
+  )
+},
   {
      path:"/contact",
      element:<Contact/>
 
   },
+   
+
+    ],
+
+
+    errorElement:<Error></Error>
+    
+  },
+ 
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+
   // console.log("something else was also called");
 
 const Header= ()=>{
@@ -37,10 +39,28 @@ const Header= ()=>{
 
                 <ul className="navitems" >
                      
-                    <li className="navlist">Home</li>
-                    <li className="navlist">About us</li>
-                    <li className="navlist">Contact us</li>
-                    <li className="navlist">Cart</li>
+                    <li className="navlist">
+
+                      <Link to="/">Home</Link>
+
+
+                    </li>
+                    <li className="navlist">
+
+                      <Link to='/about'>About us</Link>
+                      
+                      
+                      </li>
+                    <li > 
+                    <Link to="/Contact"> Contact us </Link> </li>
+
+
+
+                    <li className="navlist">
+                      
+                      <Link to="#api">Cart</Link>
+                      
+                      </li>
                     <button className="login" onClick={change} >{btnName}</button>
                     
                 </ul>
