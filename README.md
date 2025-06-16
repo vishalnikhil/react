@@ -77,6 +77,13 @@ only then button compenend gets re render not the whole page,thats cool and now 
 
      link tag is same as the anchor tag synatx wise and we us to="..."  ...have the route where we want to go and it doest not re renders the page
        only the components refreses that why "WE CALL REACT SINGLE PAGE APPLICATION"
+       behind the scene react use link as a anchor tag only because browsers dont unsertstabt it right so link is finally conver to a tag by ract router dom
+
+       how to give dynamic path to a rouet "localhost:1234/:dynamic"
+
+         here dynamic will be replace with the route we want to be here dynamically
+
+         lect 7 teaches api call too learn it 
 
 
 
