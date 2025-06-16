@@ -17,11 +17,50 @@ const RestCard = ({ resname, cuisine, img, stars }) => {
     
     </div>
 
-  );
+  ); 
 
 };
 
+
+  var arr=[1,2,3,4,5];
+   
+//   console.log(arr);
+
+//    function func(x){
+//       return x*2;
+       
+//    }
+
+//   var nw=arr.map(func);
+//   console.log(nw);
+
+//   this is how map works
+
+
+//    console.log(arr);
+
+//     function func(x){
+//           return (x&1);
+//     }
+
+//    var nw=arr.filter(func);
+
+//     console.log(nw);
+
+//     this is how filter works it filters some specific value
+
+
+    
+
+
+
 const Body = () => {
+
+    // useEffect(()=>{
+
+    //      console.log("useEffect called")
+
+    // }); //passing an empty array doest not allows usefeect to get called again and agin it will only be claeed once in the start
 
     // console.log("body got rendered due to input");   
  
@@ -67,7 +106,7 @@ if(restaurants.length===0){
   };
 
 
-  
+
   const [searchtext,setsearchtext]=useState("");
 
    

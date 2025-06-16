@@ -59,6 +59,14 @@ only then button compenend gets re render not the whole page,thats cool and now 
   reconsilation algorithms(effective dom manipulations)
     and dont forget Parcel is a beast :) <3000 (tree shaking)
 
+    useeffect is called after the body is render if you dont pass the empty object then the usestate will be callled after every time the bosy renders but if there is an empty dependenciy array then useeffect is called only in initial render
+
+    if we pass something in the dependency array then when that variable is changed then only the usestate is called, hence the useState is caleed every time this dependency array object changes
+
+
+
+    we will use react router dom library for routes
+
 
 
 
