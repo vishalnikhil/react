@@ -4,7 +4,7 @@
   "description": "this is namste react app",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel  index.html"
   },
   "keywords": [
     "react"
