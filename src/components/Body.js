@@ -1,165 +1,80 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Restlist from "../utlis/Restlist";
-import Shimmer from "./Shimmer";
 
-const Stylecard = {
-  background: "#fff7e3",
-};
-
-const RestCard = ({ resname, cuisine, img, stars }) => {
+const RestCard = ({ resname, cuisine, img, stars,delivery_time }) => {
   return (
-    <div className="rescard" style={Stylecard}>
-      <img className="img" src={img} />
-      <h3 className="resname">{resname}</h3>
-      <h4>{cuisine}</h4>
-      <h4>{stars}</h4>
-      <h4>29 minutes</h4>
-    
+    <div className="bg-white rounded-xl p-4 w-72 shadow-md hover:shadow-xl transition-transform transform hover:scale-105 duration-300 hover:bg-amber-50">
+      <img
+        className="w-full h-40 object-cover rounded-md"
+        src={img}
+        alt={resname}
+      />
+      <h3 className="text-lg font-semibold mt-3 text-pink-400">{resname}</h3>
+      <h4 className="text-gray-600">{cuisine}</h4>
+      <h4 className="text-yellow-500 font-medium">⭐ {stars}</h4>
+      <h4 className="text-gray-500 text-sm">⏱ {delivery_time} minutes</h4>
     </div>
-
-  ); 
-
+  );
 };
-
-
-  var arr=[1,2,3,4,5];
-   
-//   console.log(arr);
-
-//    function func(x){
-//       return x*2;
-       
-//    }
-
-//   var nw=arr.map(func);
-//   console.log(nw);
-
-//   this is how map works
-
-
-//    console.log(arr);
-
-//     function func(x){
-//           return (x&1);
-//     }
-
-//    var nw=arr.filter(func);
-
-//     console.log(nw);
-
-//     this is how filter works it filters some specific value
-
-
-    
-
-
 
 const Body = () => {
+  const [restaurants, setRestaurants] = useState(Restlist);
+  const [searchtext, setsearchtext] = useState("");
 
-    // useEffect(()=>{
-
-    //      console.log("useEffect called")
-
-    // }); //passing an empty array doest not allows usefeect to get called again and agin it will only be claeed once in the start
-
-    // console.log("body got rendered due to input");   
- 
-//1st is usued to use the variable and set is used to update the variable or object
- const [restaurants, setRestaurants] = useState(Restlist);
-//    useEffect(()=>{
-//            fetchData();
-//         },[]); //takes two arguments // call back function and an array this will be called after your component renders
-
-        //  console.log("body rendered")
-
-        // const fetchData= async ()=>{
-
-        //      const data= await fetch(
-        //          "#api"
-        //      )
-
-if(restaurants.length===0){
-      console.log("no restraunts found")
-
-      alert("no restraunts found")
-
-    //in this case you can show some messages on the screen
-
-      //
-};
-
-        //    const json = await data.json();
-
-        // //    setRestaurants(json)
-
-        // };
-
-       
-        
-        //first the body is rendered and then the useEffect is called
-
-
-  const handleFilter = ()=>{
-
-       setRestaurants(restaurants.filter(k=>k.stars>=4.0));
-
+  const handleFilter = () => {
+    setRestaurants(restaurants.filter((k) => k.stars >= 4.0));
   };
 
-
-
-  const [searchtext,setsearchtext]=useState("");
-
-   
-
+  const handleSearch = () => {
+    const filtered_val = Restlist.filter((res) =>
+      res.resname.toLowerCase().includes(searchtext.toLowerCase())
+    );
+    setRestaurants(filtered_val);
+  };
 
   return (
-    <div className="body">
-
-         
-      <div className="filter">
-
-        <input placeholder="find restraunt"  value={searchtext} onChange={(e)=>{
-               setsearchtext(e.target.value);
-        }}/>
-        <button className="filter-btn" onClick={()=>{
-      
-          //filter the rest cards and update ui
-
-          console.log(searchtext)
-          //aab yeh list of rest ko update krna parega
-
-
-          const filtered_val=Restlist.filter((res)=>res.resname.toLowerCase().includes(searchtext.toLowerCase()));
-
-          setRestaurants(filtered_val);
-
-
-
-
-          //hence aab mere ps jo search text aaya h wo search text variable m store ho ja rha hai
-
-          //now changes lane ke liye fn likhne parega
-          
-
-        }}>search</button>
-
-         
-        <button className="filter-btn" onClick={handleFilter}>
-               TOP RATED RESTRAUNT NEAR YOU
+    <div className="bg-amber-50 min-h-screen">
+      {/* Search & Filter */}
+      <div className="flex flex-wrap items-center justify-center gap-4 px-6 py-8">
+        <input
+          className="border-2 border-amber-300 rounded-lg px-4 py-2 w-60 bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 transition"
+          placeholder="Find restaurant"
+          value={searchtext}
+          onChange={(e) => setsearchtext(e.target.value)}
+        />
+        <button
+          className="px-5 py-2 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 hover:shadow-md transition-all duration-300"
+          onClick={handleSearch}
+        >
+          Search
+        </button>
+        <button
+          className="px-5 py-2 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 hover:shadow-md transition-all duration-300"
+          onClick={handleFilter}
+        >
+          Top Rated Restaurants
         </button>
       </div>
 
-      <div className="rest-container">
-        {restaurants.map((res, index) => (
-          <RestCard
-            key={index}
-            resname={res.resname}
-            cuisine={res.cuisine}
-            img={res.img}
-            stars={res.stars}
-          />
-        ))}
-      </div>
+      {/* No Results Message */}
+      {restaurants.length === 0 ? (
+        <p className="text-center text-red-500 font-semibold text-lg mt-8">
+          🚫 No restaurants found.
+        </p>
+      ) : (
+        <div className="flex flex-wrap justify-center gap-8 px-6 pb-10">
+          {restaurants.map((res, index) => (
+            <RestCard
+              key={index}
+              resname={res.resname}
+              cuisine={res.cuisine}
+              img={res.img}
+              stars={res.stars}
+              delivery_time={res.delivery_time}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

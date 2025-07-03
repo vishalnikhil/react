@@ -4,6 +4,9 @@ const Shimmer = () => {
   return (
     <div>
 
+
+        <h1>loading page shimmer ui</h1>
+
           
       
     </div>
