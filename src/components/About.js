@@ -1,4 +1,4 @@
-
+//we will be learning class based components here
 
 const About=()=>{
       
@@ -6,7 +6,7 @@ const About=()=>{
 
         <div>
 
-              <h1>you are on the about page</h1>
+              <h1 className="text-3xl font-bold underline">you are on the about page</h1>
 
 
 

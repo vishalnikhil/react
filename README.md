@@ -85,6 +85,10 @@ only then button compenend gets re render not the whole page,thats cool and now 
 
          lect 7 teaches api call too learn it 
 
+         learn about single responsiblity principle which react uses each component should have only single responsibility
+
+
+
 
 
 

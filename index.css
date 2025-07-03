@@ -1,4 +1,6 @@
 /* Header */
+@import "tailwindcss";
+
 .header {
   border-bottom: 2px solid rgb(37, 35, 46);
   display: flex;
