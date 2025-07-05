@@ -8,7 +8,7 @@ import Error from "./src/components/Error";
 import Login from "./src/components/Login";
 import Cart from "./src/components/Cart";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // includes Popper.js (needed for collapse)
 
 import {
   createBrowserRouter,
