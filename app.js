@@ -6,6 +6,9 @@ import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import Error from "./src/components/Error";
 import Login from "./src/components/Login";
+import Cart from "./src/components/Cart";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
 
 import {
   createBrowserRouter,
@@ -43,6 +46,10 @@ const appRouter = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+       {
+        path: "cart",
+        element: <Cart />,
       },
     ],
   },
