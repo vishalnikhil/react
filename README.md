@@ -86,7 +86,14 @@ only then button compenend gets re render not the whole page,thats cool and now 
          lect 7 teaches api call too learn it 
 
          learn about single responsiblity principle which react uses each component should have only single responsibility
+ 
 
+ # REdux toolkit  and react-redux
+   -we will build our store
+   -connect our store to our app
+   -slice
+   -dispatch
+   -selector
 
 
 

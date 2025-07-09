@@ -10,18 +10,27 @@ import Cart from "./src/components/Cart";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // includes Popper.js (needed for collapse)
 
+import { Provider } from "react-redux";
+
+import appStore from "./src/utlis/AppStore";
+
 import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
 } from "react-router-dom";
 
+
 const AppLayout = () => {
   return (
+
+    // redux store will now be accesible to the whole app
+  <Provider store={appStore}>  
     <div>
       <Header />
       <Outlet />
     </div>
+    </Provider>
   );
 };
 

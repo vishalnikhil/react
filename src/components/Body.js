@@ -1,7 +1,27 @@
 import React, { useState } from "react";
 import Restlist from "../utlis/Restlist";
 
+  import { useDispatch } from "react-redux";
+
+  import { addItem } from "../utlis/cartSlice";
+
+
+  
+
+ 
+
 const RestCard = ({ resname, cuisine, img, stars,delivery_time }) => {
+
+
+     const dispatch=useDispatch();
+
+  const handleAddItem = () =>{
+
+      //on click we need to dispatch am-n action
+
+        dispatch(addItem("pizza"));
+
+  };
   return (
     <div className="bg-white rounded-xl p-4 w-72 shadow-md hover:shadow-xl transition-transform transform hover:scale-105 duration-300 hover:bg-amber-50">
       <img
@@ -13,6 +33,10 @@ const RestCard = ({ resname, cuisine, img, stars,delivery_time }) => {
       <h4 className="text-gray-600">{cuisine}</h4>
       <h4 className="text-yellow-500 font-medium">⭐ {stars}</h4>
       <h4 className="text-gray-500 text-sm">⏱ {delivery_time} minutes</h4>
+        <div className="flex">
+       <button className="border-2 bg-amber-200" onClick={handleAddItem}>add+</button>
+         <img className="h-10" src="https://cdn-icons-png.flaticon.com/128/3144/3144456.png"></img>
+       </div>
     </div>
   );
 };
@@ -71,6 +95,7 @@ const Body = () => {
               img={res.img}
               stars={res.stars}
               delivery_time={res.delivery_time}
+
             />
           ))}
         </div>

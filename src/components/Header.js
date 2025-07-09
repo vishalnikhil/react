@@ -1,19 +1,34 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom"; // ✅ Correct import
 
 const Header = () => {
   const [btnName, setBtnName] = useState("LOGIN");
   const navigate = useNavigate(); // ✅ Correct usage of hook
 
-  const change = () => {
-    if (btnName === "LOGIN") {
-      setBtnName("LOGOUT");
-      navigate("/login"); // ✅ This will now work
-    } else {
-      setBtnName("LOGIN");
-      navigate("/"); // ✅ Navigate back to home
-    }
-  };
+ const change = () => {
+  if (btnName === "LOGIN") {
+    navigate("/login");      // ① go to login first
+    setBtnName("LOGOUT");    // ② then flip text
+  } else {
+    // here you’d clear your auth state, too, in a real app
+    navigate("/");
+    setBtnName("LOGIN");
+  }
+};
+
+
+  //we will be using selector to read data from redux store right
+
+  //subscribing to the store using selector
+
+  //this is a hook
+
+   const cartItems=useSelector((store)=>store.cart.items);
+
+    console.log(cartItems);
+
+
 
   return (
     <div className="flex justify-between items-center px-8 py-4 bg-amber-100 shadow-md sticky top-0 z-50">
@@ -39,8 +54,9 @@ const Header = () => {
         <Link to="/contact" className="px-4 py-2 rounded-lg hover:bg-amber-200 hover:shadow-md transition-all duration-200">
           Contact Us
         </Link>
-        <Link to="/cart" className="px-4 py-2 rounded-lg hover:bg-amber-200 hover:shadow-md transition-all duration-200">
-          Cart
+        <Link to="/cart" className="px-4 py-2 rounded-lg hover:bg-amber-200 hover:shadow-md transition-all duration-200 font-bold text-xl">
+          Cart-{cartItems.length}  
+          {/* aab yeha actual length aarray dikhega hmne intially 2 chiz dala that to lenght 2 hai avi array ka */}
         </Link>
 
         <button
