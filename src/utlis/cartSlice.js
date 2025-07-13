@@ -24,7 +24,8 @@ import { createSlice } from "@reduxjs/toolkit";
            },
 
            clearCart:(state)=>{
-                 state.items.length=0;
+            //  state.items.length=0;
+                 state.items.length=state.items.length-1;  
            }
 
        },

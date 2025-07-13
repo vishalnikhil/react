@@ -28,6 +28,8 @@ const Header = () => {
 
     console.log(cartItems);
 
+    //i can use this cart items to create the cart page 
+
 
 
   return (
@@ -69,5 +71,7 @@ const Header = () => {
     </div>
   );
 };
+
+ 
 
 export default Header;

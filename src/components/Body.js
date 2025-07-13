@@ -21,6 +21,8 @@ const RestCard = ({ resname, cuisine, img, stars,delivery_time }) => {
 
         dispatch(addItem("pizza"));
 
+        
+
   };
   return (
     <div className="bg-white rounded-xl p-4 w-72 shadow-md hover:shadow-xl transition-transform transform hover:scale-105 duration-300 hover:bg-amber-50">
